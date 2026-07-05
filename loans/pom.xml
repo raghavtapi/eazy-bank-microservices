@@ -11,6 +11,7 @@
     <groupId>com.raghavtapi</groupId>
     <artifactId>loans</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
     <name>loans</name>
     <description>Microservice for Loans</description>
     <url/>
@@ -97,21 +98,21 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <annotationProcessorPaths>
-                        <path>
-                            <groupId>org.projectlombok</groupId>
-                            <artifactId>lombok</artifactId>
-                        </path>
-                    </annotationProcessorPaths>
-                </configuration>
-            </plugin>
-            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
+                    <image>
+                        <name>raghavtapi/${project.artifactId}:v1</name>
+                        <bindings>
+                            <binding>C:/Dev/bindings/ca-certificates:/platform/bindings/ca-certificates</binding>
+                        </bindings>
+                        <env>
+                            <BP_JVM_VERSION>21</BP_JVM_VERSION>
+                            <NODE_EXTRA_CA_CERTS>/platform/bindings/ca-certificates/netskope.pem</NODE_EXTRA_CA_CERTS>
+                            <SSL_CERT_FILE>/platform/bindings/ca-certificates/netskope.pem</SSL_CERT_FILE>
+                        </env>
+                        <network>host</network>
+                    </image>
                     <excludes>
                         <exclude>
                             <groupId>org.projectlombok</groupId>
