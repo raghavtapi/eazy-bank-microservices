@@ -3,7 +3,10 @@ server:
 
 spring:
   application:
-    name: loans
+    name: "cards"
+  profiles:
+    active:
+      - "prod"
   datasource:
     url: jdbc:h2:mem:testdb
     driver-class-name: org.h2.Driver
@@ -17,3 +20,31 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    # This optional tells the loans microservice that even if due to any reason we are not able to connect
+    # to config server than also start the loans' microservice. "optional:" is optional here.
+    #import: "configserver:http://localhost:8071/"
+    import: "optional:configserver:http://localhost:8071/"
+
+
+# Since we are using config server we don't need these properties on individual microservice level
+# These properties can now be found at configserver/src/main/resources/config/loans.yml
+#  config:
+#    import:
+#      - "application_qa.yml"
+#      - "application_prod.yml"
+#  profiles:
+#    active:
+#      - "qa"
+#
+#build:
+#  version: "3.0"
+#
+#loans:
+#  message: "Welcome to EazyBank loans related local APIs "
+#  contactDetails:
+#    name: "Amaal Grega - Developer"
+#    email: "amaal@eazybank.com"
+#  onCallSupport:
+#    - (452) 456-2176
+#    - (546) 764-8934

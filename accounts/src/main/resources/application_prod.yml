@@ -1,0 +1,18 @@
+# Since we are using config server we don't need these properties on individual microservice level
+# These properties can now be found at configserver/src/main/resources/config/accounts-prod.yml
+#spring:
+#  config:
+#    activate:
+#      on-profile: "prod"
+#
+#build:
+#  version: "1.0"
+#
+#accounts:
+#  message: "Welcome to EazyBank accounts related prod APIs"
+#  contactDetails:
+#    name: "Reine Aishwarya - Product Owner"
+#    email: "aishwarya@eazybank.com"
+#  onCallSupport:
+#    - (453) 392-4829
+#    - (236) 203-0384

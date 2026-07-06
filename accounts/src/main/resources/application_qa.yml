@@ -1,0 +1,18 @@
+# Since we are using config server we don't need these properties on individual microservice level
+# These properties can now be found at configserver/src/main/resources/config/accounts-qa.yml
+#spring:
+#  config:
+#    activate:
+#      on-profile: "qa"
+#
+#build:
+#  version: "2.0"
+#
+#accounts:
+#  message: "Welcome to EazyBank accounts related QA APIs"
+#  contactDetails:
+#    name: "Smitha Ray - QA Lead"
+#    email: "smitha@eazybank.com"
+#  onCallSupport:
+#    - (666) 265-3765
+#    - (666) 734-8371

@@ -1,0 +1,18 @@
+# Since we are using config server we don't need these properties on individual microservice level
+# These properties can now be found at configserver/src/main/resources/config/cards-prod.yml
+#spring:
+#  config:
+#    activate:
+#      on-profile: "prod"
+#
+#build:
+#  version: "1.0"
+#
+#cards:
+#  message: "Welcome to EazyBank cards related prod APIs "
+#  contactDetails:
+#    name: "Sandra Harald - Product Owner"
+#    email: "sandra@eazybank.com"
+#  onCallSupport:
+#    - (617) 432-2356
+#    - (936) 564-8721

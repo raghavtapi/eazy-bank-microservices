@@ -3,7 +3,10 @@ server:
 
 spring:
   application:
-    name: accounts
+    name: "accounts"
+  profiles:
+    active:
+      - "prod"
   datasource:
     url: jdbc:h2:mem:testdb
     driverClassName: org.h2.Driver
@@ -17,3 +20,28 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  config:
+    # This optional tells the accounts microservice that even if due to any reason we are not able to connect
+    # to config server than also start the accounts' microservice. "optional:" is optional here.
+    #import: "configserver:http://localhost:8071/"
+    import: "optional:configserver:http://localhost:8071/"
+
+
+# Since we are using config server we don't need these properties on individual microservice level
+# These properties can now be found at configserver/src/main/resources/config/accounts.yml
+#  config:
+#    import:
+#      - "application_qa.yml"
+#      - "application_prod.yml"
+#
+#build:
+#  version: "3.0"
+#
+#accounts:
+#  message: "Welcome to EazyBank accounts related local APIs"
+#  contactDetails:
+#    name: "John Doe - Developer"
+#    email: "john@eazybank.com"
+#  onCallSupport:
+#    - (555) 555-1234
+#    - (555) 555-1345

@@ -1,6 +1,8 @@
 # IDE
 .idea/
 *.iml
+*.iws
+*.ipr
 
 # Build output
 target/
@@ -13,3 +15,19 @@ data/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Maven wrapper jar (script is kept, jar is not needed)
+.mvn/wrapper/maven-wrapper.jar
+
+# Personal notes / study material
+docs/
+resources/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
+
+# Spring Boot
+spring-shell.log
