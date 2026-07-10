@@ -25,6 +25,11 @@ spring:
     # to config server than also start the cards' microservice. "optional:" is optional here.
     #import: "configserver:http://localhost:8071/"
     import: "optional:configserver:http://localhost:8071/"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
 
 # Since we are using config server we don't need these properties on individual microservice level
@@ -48,3 +53,9 @@ spring:
 #  onCallSupport:
 #    - (412) 419-3491
 #    - (915) 382-1932
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: "cards"
+    name: "loans"
   profiles:
     active:
       - "prod"
@@ -25,6 +25,11 @@ spring:
     # to config server than also start the loans' microservice. "optional:" is optional here.
     #import: "configserver:http://localhost:8071/"
     import: "optional:configserver:http://localhost:8071/"
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
 
 
 # Since we are using config server we don't need these properties on individual microservice level
@@ -48,3 +53,9 @@ spring:
 #  onCallSupport:
 #    - (452) 456-2176
 #    - (546) 764-8934
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
