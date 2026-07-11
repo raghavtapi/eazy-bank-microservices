@@ -123,7 +123,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <image>
-                        <name>raghavtapi/${project.artifactId}:v1</name>
+                        <name>raghavtapi/${project.artifactId}:v2</name>
                         <bindings>
                             <binding>C:/Dev/bindings/ca-certificates:/platform/bindings/ca-certificates</binding>
                         </bindings>
@@ -148,7 +148,7 @@
                 <version>3.5.1</version>
                 <configuration>
                     <to>
-                        <image>raghavtapi/${project.artifactId}:v1</image>
+                        <image>raghavtapi/${project.artifactId}:v2</image>
                     </to>
                 </configuration>
             </plugin>
