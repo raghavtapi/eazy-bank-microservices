@@ -16,6 +16,9 @@ data/
 .DS_Store
 Thumbs.db
 
+# Corporate SSL cert (machine-specific)
+netskope-ca.pem
+
 # Maven wrapper jar (script is kept, jar is not needed)
 .mvn/wrapper/maven-wrapper.jar
 

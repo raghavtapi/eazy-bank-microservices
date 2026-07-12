@@ -1,0 +1,5 @@
+FROM eclipse-temurin:21-jre
+COPY netskope-ca.pem /tmp/netskope-ca.pem
+RUN keytool -importcert -alias netskope -file /tmp/netskope-ca.pem \
+    -keystore $JAVA_HOME/lib/security/cacerts -storepass changeit -noprompt \
+    && rm /tmp/netskope-ca.pem
