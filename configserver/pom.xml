@@ -78,6 +78,11 @@
 				<version>3.5.1</version>
 				<configuration>
 					<from>
+						<!--
+						Custom base image with corporate SSL cert (Netskope) baked in.
+						Only needed on corporate laptops with SSL inspection.
+						On personal machines, replace with: <image>eclipse-temurin:21-jre</image>
+						-->
 						<image>docker://raghavtapi/temurin-netskope:21-jre</image>
 					</from>
 					<to>

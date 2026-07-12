@@ -1,3 +1,11 @@
+# Custom base image with corporate SSL certificate (Netskope).
+# Only needed when running on a corporate network with SSL inspection.
+# If you're on a personal network without SSL interception, you can skip this
+# and use the default base image (eclipse-temurin:21-jre) directly in Jib config.
+#
+# Build: docker build -f Dockerfile.base -t raghavtapi/temurin-netskope:21-jre .
+# Requires: netskope-ca.pem in the same directory
+
 FROM eclipse-temurin:21-jre
 COPY netskope-ca.pem /tmp/netskope-ca.pem
 RUN keytool -importcert -alias netskope -file /tmp/netskope-ca.pem \
