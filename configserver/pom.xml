@@ -39,14 +39,6 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-config-monitor</artifactId>
-		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -86,7 +78,7 @@
 						<image>docker://raghavtapi/temurin-netskope:21-jre</image>
 					</from>
 					<to>
-						<image>raghavtapi/${project.artifactId}:v2</image>
+						<image>raghavtapi/${project.artifactId}:v3</image>
 					</to>
 				</configuration>
 			</plugin>
