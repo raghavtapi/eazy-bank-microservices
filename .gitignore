@@ -23,8 +23,11 @@ netskope-ca.pem
 .mvn/wrapper/maven-wrapper.jar
 
 # Personal notes / study material
-docs/
-resources/
+/docs/
+/resources/
+
+# Docker bind-mount runtime data (MinIO object store, etc.)
+docker-compose/**/.data/
 
 # Logs
 *.log

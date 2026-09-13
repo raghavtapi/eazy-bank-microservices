@@ -12,7 +12,7 @@ services:
       service: network-deploy-service
 
   configserver:
-    image: "raghavtapi/configserver:v6"
+    image: "raghavtapi/configserver:v7"
     container_name: configserver-ms
     ports:
       - "8071:8071"
@@ -27,7 +27,7 @@ services:
       service: microservice-base-config
 
   eurekaserver:
-    image: "raghavtapi/eurekaserver:v6"
+    image: "raghavtapi/eurekaserver:v7"
     container_name: eurekaserver-ms
     ports:
       - "8070:8070"
@@ -44,7 +44,7 @@ services:
       SPRING_APPLICATION_NAME: "eurekaserver"
 
   accounts:
-    image: "raghavtapi/accounts:v6"
+    image: "raghavtapi/accounts:v7"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -61,7 +61,7 @@ services:
       service: microservice-eureka-config
 
   loans:
-    image: "raghavtapi/loans:v6"
+    image: "raghavtapi/loans:v7"
     container_name: loans-ms
     ports:
       - "8090:8090"
@@ -78,7 +78,7 @@ services:
       service: microservice-eureka-config
 
   cards:
-    image: "raghavtapi/cards:v6"
+    image: "raghavtapi/cards:v7"
     container_name: cards-ms
     ports:
       - "9000:9000"
@@ -95,7 +95,7 @@ services:
       service: microservice-eureka-config
 
   gatewayserver:
-    image: "raghavtapi/gatewayserver:v6"
+    image: "raghavtapi/gatewayserver:v7"
     container_name: gatewayserver-ms
     ports:
       - "8072:8072"
