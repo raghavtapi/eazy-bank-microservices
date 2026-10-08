@@ -38,12 +38,10 @@ spring:
           group: ${spring.application.name}
         sendCommunication-out-0:
           destination: send-communication
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: guest
-    password: guest
-    connection-timeout: 10s
+      kafka:
+        binder:
+          brokers:
+            - localhost:9092
 
 # Since we are using config server we don't need these properties on individual microservice level
 # These properties can now be found at configserver/src/main/resources/config/accounts.yml
